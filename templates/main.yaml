@@ -106,147 +106,147 @@ dns:
 
 # 动态节点策略组
 proxy-groups:
-  - name: 节点选择
+  - name: ✈️ 节点选择
     type: select
     include-all: true
     exclude-filter: '(?i)(剩余|流量|套餐|到期|过期|官网|客服|联系|网址|更新|建议|群组)'
 
-  - name: 漏网之鱼
+  - name: 🐟 漏网之鱼
     type: select
     proxies:
-      - 全球直连
-      - 节点选择
+      - ✈️ 节点选择
+      - 🎯 全球直连
 
 # 服务分流策略组
-  - name: 网络测试
+  - name: 📈 网络测试
     type: select
     proxies:
-      - 全球直连
-      - 节点选择
+      - 🎯 全球直连
+      - ✈️ 节点选择
 
-  - name: 人工智能
+  - name: 🤖 人工智能
     type: select
     proxies:
-      - 节点选择
-      - 全球直连
+      - ✈️ 节点选择
+      - 🎯 全球直连
 
-  - name: GitHub
+  - name: ⌨️ GitHub
     type: select
     proxies:
-      - 节点选择
-      - 全球直连
+      - ✈️ 节点选择
+      - 🎯 全球直连
 
-  - name: 谷歌FCM
+  - name: 📢 谷歌FCM
     type: select
     proxies:
-      - 节点选择
-      - 全球直连
+      - ✈️ 节点选择
+      - 🎯 全球直连
 
-  - name: 国外媒体
+  - name: 🎞️ 国外媒体
     type: select
     proxies:
-      - 节点选择
-      - 全球直连
+      - ✈️ 节点选择
+      - 🎯 全球直连
 
-  - name: TikTok
+  - name: 🎵 TikTok
     type: select
     proxies:
-      - 节点选择
-      - 全球直连
+      - ✈️ 节点选择
+      - 🎯 全球直连
 
-  - name: 哔哩哔哩
+  - name: 📺 哔哩哔哩
     type: select
     proxies:
-      - 全球直连
-      - 节点选择
+      - 🎯 全球直连
+      - ✈️ 节点选择
 
-  - name: 游戏平台
+  - name: 🎮 游戏平台
     type: select
     proxies:
-      - 全球直连
-      - 节点选择
+      - 🎯 全球直连
+      - ✈️ 节点选择
 
-  - name: 国内媒体
+  - name: 🎬 国内媒体
     type: select
     proxies:
-      - 全球直连
-      - 节点选择
+      - 🎯 全球直连
+      - ✈️ 节点选择
 
-  - name: 微软云盘
+  - name: Ⓜ️ 微软云盘
     type: select
     proxies:
-      - 全球直连
-      - 节点选择
+      - 🎯 全球直连
+      - ✈️ 节点选择
 
-  - name: 微软服务
+  - name: Ⓜ️ 微软服务
     type: select
     proxies:
-      - 全球直连
-      - 节点选择
+      - 🎯 全球直连
+      - ✈️ 节点选择
 
-  - name: 亚马逊
+  - name: 🛒 亚马逊
     type: select
     proxies:
-      - 节点选择
-      - 全球直连
+      - ✈️ 节点选择
+      - 🎯 全球直连
 
-  - name: 苹果服务
+  - name: 🍎 苹果服务
     type: select
     proxies:
-      - 全球直连
-      - 节点选择
+      - 🎯 全球直连
+      - ✈️ 节点选择
 
-  - name: Telegram
+  - name: 📲 Telegram
     type: select
     proxies:
-      - 节点选择
-      - 全球直连
+      - ✈️ 节点选择
+      - 🎯 全球直连
 
-  - name: 私有网络
+  - name: 🔒 私有网络
     type: select
     proxies:
-      - 全球直连
-      - 节点选择
+      - 🎯 全球直连
+      - ✈️ 节点选择
 
-  - name: 全球直连
+  - name: 🎯 全球直连
     type: select
     proxies:
       - DIRECT
 
-  - name: 广告屏蔽
+  - name: 🎯 广告屏蔽
     type: select
     proxies:
       - REJECT
       - DIRECT
 
-  - name: 拒绝访问
+  - name: 🚫 拒绝访问
     type: select
     proxies:
       - REJECT
 
-  - name: oneding.top
+  - name: 🥺oneding.top
     type: select
     proxies:
-      - 全球直连
-      - 节点选择
+      - 🎯 全球直连
+      - ✈️ 节点选择
 
-  - name: dingone.top
+  - name: 🥺dingone.top
     type: select
     proxies:
-      - 全球直连
-      - 节点选择
+      - 🎯 全球直连
+      - ✈️ 节点选择
 
-  - name: 优先直连
+  - name: 🏠 优先直连
     type: select
     proxies:
-      - 全球直连
-      - 节点选择
+      - 🎯 全球直连
+      - ✈️ 节点选择
 
-  - name: 优先代理
+  - name: 🚀 优先代理
     type: select
     proxies:
-      - 节点选择
-      - 全球直连
+      - ✈️ 节点选择
+      - 🎯 全球直连
 
 # ACL4SSR 经典规则集
 rule-providers:
@@ -511,10 +511,10 @@ rules:
   - IP-CIDR,123.249.124.111/32,DIRECT,no-resolve
   - IP-CIDR,123.249.41.92/32,DIRECT,no-resolve
   - IP-CIDR,38.175.200.91/32,DIRECT,no-resolve
-  - IP-CIDR,38.60.221.27/32,节点选择,no-resolve
+  - IP-CIDR,38.60.221.27/32,✈️ 节点选择,no-resolve
   - DOMAIN-SUFFIX,remoguardian.com,DIRECT
-  - DOMAIN-SUFFIX,tokhubs.com,节点选择
-  - DOMAIN-SUFFIX,micuapi.com,节点选择
+  - DOMAIN-SUFFIX,tokhubs.com,✈️ 节点选择
+  - DOMAIN-SUFFIX,micuapi.com,✈️ 节点选择
   - DOMAIN-SUFFIX,netcup.com,DIRECT
   - PROCESS-NAME,WeChat.exe,DIRECT
   - PROCESS-NAME,WeChatAppEx.exe,DIRECT
@@ -522,44 +522,44 @@ rules:
   - PROCESS-NAME,WeChatPlayer.exe,DIRECT
   - PROCESS-NAME,WeChatUtility.exe,DIRECT
 
-  - DOMAIN-SUFFIX,oneding.top,oneding.top
-  - DOMAIN-SUFFIX,dingone.top,dingone.top
-  - DOMAIN-SUFFIX,speedtest.net,网络测试
-  - DOMAIN-SUFFIX,ooklaserver.net,网络测试
-  - DOMAIN-SUFFIX,x.ai,人工智能
-  - DOMAIN-SUFFIX,grok.com,人工智能
+  - DOMAIN-SUFFIX,oneding.top,🥺oneding.top
+  - DOMAIN-SUFFIX,dingone.top,🥺dingone.top
+  - DOMAIN-SUFFIX,speedtest.net,📈 网络测试
+  - DOMAIN-SUFFIX,ooklaserver.net,📈 网络测试
+  - DOMAIN-SUFFIX,x.ai,🤖 人工智能
+  - DOMAIN-SUFFIX,grok.com,🤖 人工智能
 
-  - RULE-SET,LocalAreaNetwork,私有网络
-  - RULE-SET,UnBan,全球直连
-  - RULE-SET,BanAD,广告屏蔽
-  - RULE-SET,BanProgramAD,广告屏蔽
-  - RULE-SET,GoogleFCM,谷歌FCM
-  - RULE-SET,GoogleCN,全球直连
-  - RULE-SET,Apple,苹果服务
-  - RULE-SET,YouTube,国外媒体
-  - RULE-SET,Netflix,国外媒体
-  - RULE-SET,AI,人工智能
-  - RULE-SET,OpenAi,人工智能
-  - RULE-SET,OneDrive,微软云盘
-  - RULE-SET,Microsoft,微软服务
-  - RULE-SET,Amazon,亚马逊
-  - RULE-SET,Telegram,Telegram
-  - RULE-SET,Epic,游戏平台
-  - RULE-SET,Sony,游戏平台
-  - RULE-SET,SteamCN,全球直连
-  - RULE-SET,Steam,游戏平台
-  - RULE-SET,Nintendo,游戏平台
-  - RULE-SET,Github,GitHub
-  - RULE-SET,Bilibili,哔哩哔哩
-  - RULE-SET,ChinaMedia,国内媒体
-  - RULE-SET,TikTok,TikTok
-  - RULE-SET,ProxyMedia,国外媒体
-  - RULE-SET,Docker,节点选择
-  - RULE-SET,PrivateTracker,全球直连
-  - RULE-SET,Download,全球直连
-  - RULE-SET,ProxyGFWlist,节点选择
-  - RULE-SET,ChinaDomain,全球直连
-  - RULE-SET,ChinaCompanyIp,全球直连
-  - RULE-SET,ChinaIp,全球直连
-  - GEOIP,CN,全球直连,no-resolve
-  - MATCH,漏网之鱼
+  - RULE-SET,LocalAreaNetwork,🔒 私有网络
+  - RULE-SET,UnBan,🎯 全球直连
+  - RULE-SET,BanAD,🎯 广告屏蔽
+  - RULE-SET,BanProgramAD,🎯 广告屏蔽
+  - RULE-SET,GoogleFCM,📢 谷歌FCM
+  - RULE-SET,GoogleCN,🎯 全球直连
+  - RULE-SET,Apple,🍎 苹果服务
+  - RULE-SET,YouTube,🎞️ 国外媒体
+  - RULE-SET,Netflix,🎞️ 国外媒体
+  - RULE-SET,AI,🤖 人工智能
+  - RULE-SET,OpenAi,🤖 人工智能
+  - RULE-SET,OneDrive,Ⓜ️ 微软云盘
+  - RULE-SET,Microsoft,Ⓜ️ 微软服务
+  - RULE-SET,Amazon,🛒 亚马逊
+  - RULE-SET,Telegram,📲 Telegram
+  - RULE-SET,Epic,🎮 游戏平台
+  - RULE-SET,Sony,🎮 游戏平台
+  - RULE-SET,SteamCN,🎯 全球直连
+  - RULE-SET,Steam,🎮 游戏平台
+  - RULE-SET,Nintendo,🎮 游戏平台
+  - RULE-SET,Github,⌨️ GitHub
+  - RULE-SET,Bilibili,📺 哔哩哔哩
+  - RULE-SET,ChinaMedia,🎬 国内媒体
+  - RULE-SET,TikTok,🎵 TikTok
+  - RULE-SET,ProxyMedia,🎞️ 国外媒体
+  - RULE-SET,Docker,✈️ 节点选择
+  - RULE-SET,PrivateTracker,🎯 全球直连
+  - RULE-SET,Download,🎯 全球直连
+  - RULE-SET,ProxyGFWlist,✈️ 节点选择
+  - RULE-SET,ChinaDomain,🎯 全球直连
+  - RULE-SET,ChinaCompanyIp,🎯 全球直连
+  - RULE-SET,ChinaIp,🎯 全球直连
+  - GEOIP,CN,🎯 全球直连,no-resolve
+  - MATCH,🐟 漏网之鱼
