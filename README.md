@@ -36,14 +36,14 @@
 https://raw.githubusercontent.com/sanhua1/mihomo-config/main/templates/main.yaml
 ```
 
-Sub-Store 当前实现会把所选订阅或组合订阅生成的节点写入 `proxies`。模板中的 `include-all: true` 随后由 Mihomo 收集这些节点，`filter` 和 `exclude-filter` 再按节点名称筛选地区。
+Sub-Store 当前实现会把所选订阅或组合订阅生成的节点写入 `proxies`。`节点选择` 使用 `include-all: true` 收纳全部节点，其余服务组只保留“节点选择”和“全球直连”两类选择。
 
 ## 模板约定
 
 - `templates/main.yaml` 不含 `proxies` 和 `proxy-providers`，也不含任何真实节点。
-- 地区组依赖节点名称中的中文、英文、机场代码或常见城市关键词。
-- 节点改名后若不再包含地区关键词，需要扩充对应组的 `filter`。
+- `节点选择` 不按国家或地区分类，只排除流量、到期时间、官网等非节点条目。
+- 服务策略组保持二元选择，并按原配置保留直连优先或节点优先的顺序。
 - 公共规则来自 ACL4SSR。自定义规则位于 `rules` 顶部，优先于所有 `RULE-SET`。
 - Mihomo Party 的控制器、面板和口令由客户端管理，不写入公共模板。
 
-修改分流时，先确认 `rules` 目标组存在于 `proxy-groups`。新增 `RULE-SET` 时，还要在 `rule-providers` 中加入同名规则源。修改地区匹配时，只调整对应策略组的 `filter` 或 `exclude-filter`。
+修改分流时，先确认 `rules` 目标组存在于 `proxy-groups`。新增 `RULE-SET` 时，还要在 `rule-providers` 中加入同名规则源。需要过滤订阅中的非节点条目时，只调整 `节点选择` 的 `exclude-filter`。
