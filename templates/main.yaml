@@ -519,6 +519,7 @@ rule-providers:
 # 自定义规则置顶，后接 ACL4SSR 分流
 rules:
   - DOMAIN-SUFFIX,qidian.com,🏠 固定直连
+  - DOMAIN-SUFFIX,openxlab.org.cn,🚀 固定代理
   - DOMAIN-KEYWORD,mineru,🚀 固定代理
   - DOMAIN-KEYWORD,micuapi,🚀 固定代理
 
