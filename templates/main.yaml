@@ -111,6 +111,16 @@ proxy-groups:
     include-all: true
     exclude-filter: '(?i)(剩余|流量|套餐|到期|过期|官网|客服|联系|网址|更新|建议|群组)'
 
+  - name: 🏠 固定直连
+    type: select
+    proxies:
+      - DIRECT
+
+  - name: 🚀 固定代理
+    type: select
+    proxies:
+      - ✈️ 节点选择
+
   - name: 🐟 漏网之鱼
     type: select
     proxies:
@@ -508,13 +518,16 @@ rule-providers:
 
 # 自定义规则置顶，后接 ACL4SSR 分流
 rules:
+  - DOMAIN-SUFFIX,qidian.com,🏠 固定直连
+  - DOMAIN-KEYWORD,mineru,🚀 固定代理
+  - DOMAIN-KEYWORD,micuapi,🚀 固定代理
+
   - IP-CIDR,123.249.124.111/32,DIRECT,no-resolve
   - IP-CIDR,123.249.41.92/32,DIRECT,no-resolve
   - IP-CIDR,38.175.200.91/32,DIRECT,no-resolve
   - IP-CIDR,38.60.221.27/32,✈️ 节点选择,no-resolve
   - DOMAIN-SUFFIX,remoguardian.com,DIRECT
   - DOMAIN-SUFFIX,tokhubs.com,✈️ 节点选择
-  - DOMAIN-SUFFIX,micuapi.com,✈️ 节点选择
   - DOMAIN-SUFFIX,netcup.com,DIRECT
   - PROCESS-NAME,WeChat.exe,DIRECT
   - PROCESS-NAME,WeChatAppEx.exe,DIRECT
