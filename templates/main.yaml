@@ -520,7 +520,7 @@ rule-providers:
 rules:
   - DOMAIN-SUFFIX,qidian.com,🏠 固定直连
   - DOMAIN-SUFFIX,openxlab.org.cn,🚀 固定代理
-  - DOMAIN-KEYWORD,bili,🚀 固定代理
+  - DOMAIN-KEYWORD,bili,🏠 固定直连
   - DOMAIN-KEYWORD,mineru,🚀 固定代理
   - DOMAIN-KEYWORD,micuapi,🚀 固定代理
 
