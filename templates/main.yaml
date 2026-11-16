@@ -179,6 +179,12 @@ proxy-groups:
       - 🎯 全球直连
       - ✈️ 节点选择
 
+  # 独立选择台服节点，收纳全部有效节点，不按地区过滤
+  - name: 英雄联盟台服
+    type: select
+    include-all: true
+    exclude-filter: '(?i)(剩余|流量|套餐|到期|过期|官网|客服|联系|网址|更新|建议|群组)'
+
   - name: 🎮 游戏平台
     type: select
     proxies:
@@ -527,6 +533,17 @@ rule-providers:
 
 # 自定义规则置顶，后接 ACL4SSR 分流
 rules:
+  # 台服对局网段仅 UDP 直连，优先于 Riot 域名及进程规则
+  - AND,((NETWORK,UDP),(IP-CIDR,151.106.0.0/16,no-resolve)),DIRECT
+  - AND,((NETWORK,UDP),(IP-CIDR,13.214.0.0/16,no-resolve)),DIRECT
+
+  # Riot 登录、客户端及其余游戏连接交给独立策略组
+  - DOMAIN-SUFFIX,riotgames.com,英雄联盟台服
+  - DOMAIN-SUFFIX,leagueoflegends.com,英雄联盟台服
+  - DOMAIN-SUFFIX,pvp.net,英雄联盟台服
+  - DOMAIN-SUFFIX,riotcdn.net,英雄联盟台服
+  - PROCESS-NAME-REGEX,(?i)^(RiotClientServices|RiotClientUx|RiotClientUxRender|LeagueClient|LeagueClientUx|LeagueClientUxRender|League of Legends)(\.exe)?$,英雄联盟台服
+
   # 观影域名及其子域名统一交给观影策略组
   - DOMAIN-SUFFIX,uhdgo.com,🎥 观影
   - DOMAIN-SUFFIX,uhdnow.com,🎥 观影
