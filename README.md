@@ -36,7 +36,7 @@
 https://raw.githubusercontent.com/sanhua1/mihomo-config/main/templates/main.yaml
 ```
 
-Sub-Store 当前实现会把所选订阅或组合订阅生成的节点写入 `proxies`。`✈️ 节点选择` 使用 `include-all: true` 收纳全部节点，其余服务组只保留“✈️ 节点选择”和“🎯 全球直连”两类选择。
+Sub-Store 当前实现会把所选订阅或组合订阅生成的节点写入 `proxies`。`✈️ 节点选择` 使用 `include-all: true` 收纳全部节点。`🎥 观影` 也收纳相同节点，并提供“🎯 全球直连”和“✈️ 节点选择”选项，默认直连。
 
 ## 模板约定
 
@@ -44,8 +44,9 @@ Sub-Store 当前实现会把所选订阅或组合订阅生成的节点写入 `pr
 - `✈️ 节点选择` 不按国家或地区分类，只排除流量、到期时间、官网等非节点条目。
 - `🏠 固定直连` 只含 `DIRECT`，`🚀 固定代理` 只引用 `✈️ 节点选择`，用于覆盖后续规则。
 - 固定规则位于 `rules` 最顶部；当前 `qidian.com` 以及包含 `bili` 或 `gitee` 的域名固定直连，包含 `mineru` 或 `micuapi` 的域名固定走代理。关键词只匹配域名，不匹配网页内容。
-- 服务策略组保持二元选择，并按原配置保留直连优先或节点优先的顺序。
+- `🎥 观影` 匹配 `uhdgo.com`、`uhdnow.com` 及其子域名，节点过滤条件与 `✈️ 节点选择` 保持一致。
+- 其余服务策略组保持二元选择，并按原配置保留直连优先或节点优先的顺序。
 - 公共规则来自 ACL4SSR。自定义规则位于 `rules` 顶部，优先于所有 `RULE-SET`。
 - Mihomo Party 的控制器、面板和口令由客户端管理，不写入公共模板。
 
-修改分流时，先确认 `rules` 目标组存在于 `proxy-groups`。新增 `RULE-SET` 时，还要在 `rule-providers` 中加入同名规则源。需要过滤订阅中的非节点条目时，只调整 `✈️ 节点选择` 的 `exclude-filter`。
+修改分流时，先确认 `rules` 目标组存在于 `proxy-groups`。新增 `RULE-SET` 时，还要在 `rule-providers` 中加入同名规则源。需要过滤订阅中的非节点条目时，同步调整 `✈️ 节点选择` 和 `🎥 观影` 的 `exclude-filter`。

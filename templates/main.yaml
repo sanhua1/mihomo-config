@@ -128,6 +128,15 @@ proxy-groups:
       - 🎯 全球直连
 
 # 服务分流策略组
+  # 观影可选直连、节点选择及全部有效节点
+  - name: 🎥 观影
+    type: select
+    include-all: true
+    exclude-filter: '(?i)(剩余|流量|套餐|到期|过期|官网|客服|联系|网址|更新|建议|群组)'
+    proxies:
+      - 🎯 全球直连
+      - ✈️ 节点选择
+
   - name: 📈 网络测试
     type: select
     proxies:
@@ -518,6 +527,10 @@ rule-providers:
 
 # 自定义规则置顶，后接 ACL4SSR 分流
 rules:
+  # 观影域名及其子域名统一交给观影策略组
+  - DOMAIN-SUFFIX,uhdgo.com,🎥 观影
+  - DOMAIN-SUFFIX,uhdnow.com,🎥 观影
+
   - DOMAIN-SUFFIX,qidian.com,🏠 固定直连
   - DOMAIN-KEYWORD,gitee,🏠 固定直连
   - DOMAIN-SUFFIX,openxlab.org.cn,🚀 固定代理
