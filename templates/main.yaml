@@ -179,11 +179,13 @@ proxy-groups:
       - 🎯 全球直连
       - ✈️ 节点选择
 
-  # 独立选择台服节点，收纳全部有效节点，不按地区过滤
+  # 台服可选直连及全部有效节点，不按地区过滤
   - name: 英雄联盟台服
     type: select
     include-all: true
     exclude-filter: '(?i)(剩余|流量|套餐|到期|过期|官网|客服|联系|网址|更新|建议|群组)'
+    proxies:
+      - DIRECT
 
   - name: 🎮 游戏平台
     type: select
