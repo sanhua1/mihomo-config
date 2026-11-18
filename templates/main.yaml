@@ -139,6 +139,8 @@ proxy-groups:
 
   - name: 📈 网络测试
     type: select
+    include-all: true
+    exclude-filter: '(?i)(剩余|流量|套餐|到期|过期|官网|客服|联系|网址|更新|建议|群组)'
     proxies:
       - 🎯 全球直连
       - ✈️ 节点选择
