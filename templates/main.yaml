@@ -64,8 +64,10 @@ tun:
   auto-route: true
   auto-redirect: true
   auto-detect-interface: true
+  # 防止 Windows 多网卡并发 DNS 及局域网网关 DNS 绕过 TUN
+  strict-route: true
 
-# 保留现有 fake-ip DNS 行为
+# fake-ip DNS：国内域名走国内 DoH 直连，其余域名走境外 DoH 并经代理发出
 dns:
   enable: true
   concurrent: true
@@ -100,9 +102,12 @@ dns:
     - https://dns.alidns.com/dns-query
   nameserver-policy:
     "+.115.com": 223.5.5.5
+    "geosite:private,cn":
+      - https://doh.pub/dns-query
+      - https://dns.alidns.com/dns-query
   nameserver:
-    - https://doh.pub/dns-query
-    - https://dns.alidns.com/dns-query
+    - https://1.1.1.1/dns-query#✈️ 节点选择
+    - https://8.8.8.8/dns-query#✈️ 节点选择
 
 # 动态节点策略组
 proxy-groups:

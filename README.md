@@ -60,3 +60,11 @@ Sub-Store 当前实现会把所选订阅或组合订阅生成的节点写入 `pr
 客户端更新和资源下载走 `英雄联盟下载`，可单独选一个下载快的节点，不影响登录走 `DIRECT` 配合加速器。若在系统代理绕过中加入了 `riotcdn.net`，需将其移除，否则更新下载会绕过 Clash。
 
 对局 UDP 直连网段来自参考配置，需以实际游戏连接为准；可在客户端的连接记录中确认对局命中 `DIRECT`、登录和客户端连接命中 `英雄联盟登录`。
+
+## DNS 防泄露
+
+- `tun.strict-route: true`：阻止 Windows 多网卡并发 DNS、局域网网关 DNS 等绕过 TUN 的查询。若向日葵、局域网游戏等软件异常，可在客户端临时关闭对比。
+- `nameserver` 使用 `1.1.1.1`、`8.8.8.8` 的 DoH，并通过 `#✈️ 节点选择` 经代理发出；`geosite:private,cn` 域名由 `nameserver-policy` 交给 `doh.pub`、`alidns` 直连解析。
+- `direct-nameserver`、`default-nameserver`、`proxy-server-nameserver` 保持国内 DNS，直连域名和节点域名的解析不受影响。
+- `geosite:cn` 依赖 GeoSite 数据，mihomo 首次启动会自动下载。
+- 浏览器的「使用安全 DNS」会绕过 mihomo 的 DNS，测试泄露前建议关闭。
