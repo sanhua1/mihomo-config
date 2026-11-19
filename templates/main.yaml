@@ -570,6 +570,8 @@ rules:
   - DOMAIN-SUFFIX,uhdgo.com,🎥 观影
   - DOMAIN-SUFFIX,uhdnow.com,🎥 观影
   - DOMAIN-SUFFIX,pro.emby.moe,🎥 观影
+  # 须位于 dingone.top 规则之前，否则会被其提前匹配
+  - DOMAIN-SUFFIX,cfroute.dingone.top,🎥 观影
 
   - DOMAIN-SUFFIX,qidian.com,🏠 固定直连
   - DOMAIN-SUFFIX,090227.xyz,🏠 固定直连
