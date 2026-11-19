@@ -65,6 +65,7 @@ Sub-Store 当前实现会把所选订阅或组合订阅生成的节点写入 `pr
 
 - `tun.strict-route: true`：阻止 Windows 多网卡并发 DNS、局域网网关 DNS 等绕过 TUN 的查询。若向日葵、局域网游戏等软件异常，可在客户端临时关闭对比。
 - `nameserver` 使用 `1.1.1.1`、`8.8.8.8` 的 DoH，并通过 `#✈️ 节点选择` 经代理发出；`geosite:private,cn` 域名由 `nameserver-policy` 交给 `doh.pub`、`alidns` 直连解析。
-- `direct-nameserver`、`default-nameserver`、`proxy-server-nameserver` 保持国内 DNS，直连域名和节点域名的解析不受影响。
+- `direct-nameserver`、`default-nameserver`、`proxy-server-nameserver` 使用国内 DoH，直连域名和节点域名的解析不受影响；模板内不含明文 DNS。
+- Clash Party 的 TUN 设置由客户端管理，会覆盖模板中的 `strict-route`。需在客户端「虚拟网卡」设置中手动开启「严格路由」，并在 `%APPDATA%\mihomo-party\work\config.yaml` 中确认 `strict-route: true` 已生效。
 - `geosite:cn` 依赖 GeoSite 数据，mihomo 首次启动会自动下载。
 - 浏览器的「使用安全 DNS」会绕过 mihomo 的 DNS，测试泄露前建议关闭。
