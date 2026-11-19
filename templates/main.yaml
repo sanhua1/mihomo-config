@@ -569,6 +569,7 @@ rules:
   # 观影域名及其子域名统一交给观影策略组
   - DOMAIN-SUFFIX,uhdgo.com,🎥 观影
   - DOMAIN-SUFFIX,uhdnow.com,🎥 观影
+  - DOMAIN-SUFFIX,pro.emby.moe,🎥 观影
 
   - DOMAIN-SUFFIX,qidian.com,🏠 固定直连
   - DOMAIN-SUFFIX,090227.xyz,🏠 固定直连
