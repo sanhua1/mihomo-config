@@ -67,8 +67,13 @@ tun:
   auto-detect-interface: true
   # 防止 Windows 多网卡并发 DNS 及局域网网关 DNS 绕过 TUN
   strict-route: true
-  # 与网易 UU 双开时，将台服登录 163.163.0.0/16 留给系统路由。
-  # 对战网段同样交给系统路由，包含实测 151.106.0.0/16 和社区配置中的 13.214.0.0/16。
+
+  # 网易 UU 双开 · 系统路由（先启动 UU 加速，再开启 Clash TUN）
+  # 下方列出 Clash TUN 接管的地址。交给系统路由的网段集中列于此处。
+  #   台服登录       163.163.0.0/16
+  #   台服对战       151.106.0.0/16
+  #   候选对战网段   13.214.0.0/16
+  # 已进入 Mihomo 的游戏连接见下方「英雄联盟分流」。
   route-address:
     - 1.0.0.0/9
     - 1.128.0.0/9
@@ -240,7 +245,8 @@ proxy-groups:
       - 🎯 全球直连
       - ✈️ 节点选择
 
-  # 登录可选直连及全部有效节点，不按地区过滤
+  # 英雄联盟策略组
+  # 登录可选直连及全部有效节点
   - name: 英雄联盟登录
     type: select
     include-all: true
@@ -248,7 +254,7 @@ proxy-groups:
     proxies:
       - DIRECT
 
-  # 英雄联盟客户端更新与资源下载，独立于登录分组
+  # 客户端更新与资源下载可单独选节点
   - name: 英雄联盟下载
     type: select
     include-all: true
@@ -604,7 +610,9 @@ rule-providers:
 
 # 自定义规则置顶，后接 ACL4SSR 分流
 rules:
-  # 台服对局网段仅 UDP 直连，优先于 Riot 域名及进程规则
+  # 英雄联盟分流
+  # UU 双开使用上方的系统路由。进入 Mihomo 的对局 UDP 由以下规则直连。
+  # 这两条规则优先于 Riot 域名及进程规则。
   - AND,((NETWORK,UDP),(IP-CIDR,151.106.0.0/16,no-resolve)),DIRECT
   - AND,((NETWORK,UDP),(IP-CIDR,13.214.0.0/16,no-resolve)),DIRECT
 
