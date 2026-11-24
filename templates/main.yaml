@@ -34,6 +34,7 @@ sniffer:
       ports:
         - 443
         - 8443
+      override-destination: true
     QUIC:
       ports:
         - 443
