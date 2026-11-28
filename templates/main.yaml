@@ -638,6 +638,8 @@ rules:
   - DOMAIN-SUFFIX,qidian.com,🏠 固定直连
   - DOMAIN-SUFFIX,090227.xyz,🏠 固定直连
   - DOMAIN-SUFFIX,jarimedical.com,🏠 固定直连
+  - DOMAIN-SUFFIX,cdntips.net,🏠 固定直连
+  - DOMAIN-SUFFIX,cdntips.com,🏠 固定直连
   - DOMAIN-KEYWORD,gitee,🏠 固定直连
   - DOMAIN-SUFFIX,openxlab.org.cn,🚀 固定代理
   - DOMAIN-KEYWORD,bili,🏠 固定直连
